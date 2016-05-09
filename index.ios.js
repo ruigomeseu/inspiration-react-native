@@ -15,7 +15,7 @@ import React, {
 
 var Spinner = require('react-native-spinkit');
 
-var REQUEST_URL = 'https://gjgihitgak.localtunnel.me/quotes'
+var REQUEST_URL = 'http://inspiration-ruigomes.rhcloud.com/quotes'
 
 class Inspiration extends Component {
   constructor(props) {
