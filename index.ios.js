@@ -12,7 +12,14 @@ import React, {
   View,
   TouchableOpacity,
   TouchableHighlight,
+  PixelRatio,
 } from 'react-native';
+
+
+import { getCorrectFontSizeForScreen } from './multiResolution'
+
+import Dimensions from 'Dimensions';
+const { height:h, width:w } = Dimensions.get('window');
 
 var Spinner = require('react-native-spinkit');
 
@@ -142,7 +149,7 @@ const styles = StyleSheet.create({
   quote: {
     textAlign: 'center',
     color: '#FFFFFF',
-    fontSize: 40,
+    fontSize: getCorrectFontSizeForScreen(PixelRatio, w, h, 28),
     paddingLeft: 30,
     paddingRight: 30,
     marginBottom: 5,
