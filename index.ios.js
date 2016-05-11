@@ -38,41 +38,29 @@ class Inspiration extends Component {
     this.state = {
       quotes: null,
       selectedQuote: 0,
-      shareLinkContent: {
-        contentType: 'link',
-        contentDescription: 'Best memes online',
-        contentUrl: "https://www.facebook.com/",
-      },
     };
   }
 
-  shareLinkWithShareDialog() {
-    var tmp = this;
-    ShareDialog.canShow(this.state.shareLinkContent).then(
-      function(canShow) {
-        if (canShow) {
-          return ShareDialog.show(tmp.state.shareLinkContent);
-        }
-      }
-    ).then(
-      function(result) {
-        if (result.isCancelled) {
-          alert('Share cancelled');
-        } else {
-          alert('Share success with postId: '
-            + result.postId);
-        }
-      },
-      function(error) {
-        alert('Share fail with error: ' + error);
-      }
-    );
+  getCurrentQuote() {
+    return this.state.quotes[this.state.selectedQuote];
   }
 
-  clickMe() {
+  getNewQuote() {
     this.setState({
       selectedQuote: Math.floor(Math.random() * this.state.quotes.length)
     })
+  }
+
+  getSharedQuote() {
+    var quote = this.getCurrentQuote();
+
+    return {
+      contentType: 'link',
+      quote: quote.content,
+      contentTitle: quote.content,
+      contentDescription: quote.author,
+      contentUrl: "https://www.facebook.com/",
+    }
   }
 
   render() {
@@ -80,11 +68,11 @@ class Inspiration extends Component {
       return this.renderLoadingView();
     }
 
-    var quote = this.state.quotes[this.state.selectedQuote];
+    var quote = this.getCurrentQuote();
 
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={styles.quoteContainer} onPress={this.clickMe.bind(this)}>
+        <TouchableOpacity style={styles.quoteContainer} onPress={this.getNewQuote.bind(this)}>
             <Text style={styles.quote}>
               { quote.content }
             </Text>
@@ -96,7 +84,7 @@ class Inspiration extends Component {
             </Text>
         </TouchableOpacity>
         <View style={styles.shareContainer}>
-          <ShareButton shareContent={this.state.shareLinkContent}/>
+          <ShareButton shareContent={this.getSharedQuote()}/>
         </View>
       </View>
     );
