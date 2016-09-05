@@ -36,9 +36,13 @@ export default class Inspiration extends Component {
   }
 
   getNewQuote() {
+    do {
+      newSelectedQuote = Math.floor(Math.random() * this.state.quotes.length);
+    } while(newSelectedQuote == this.state.selectedQuote);
+
     this.setState({
-      selectedQuote: Math.floor(Math.random() * this.state.quotes.length)
-    })
+      selectedQuote: newSelectedQuote
+    });
   }
 
   getSharedQuote() {
