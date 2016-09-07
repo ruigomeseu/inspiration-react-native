@@ -1,6 +1,5 @@
-import React, {
+import {
   AppRegistry,
-  Component,
   StyleSheet,
   Text,
   View,
@@ -8,6 +7,13 @@ import React, {
   TouchableHighlight,
   PixelRatio,
 } from 'react-native';
+
+import React , {
+  Component
+} from 'react';
+
+import Onboarding from './onboarding'
+import store from 'react-native-simple-store';
 
 var Spinner = require('react-native-spinkit');
 
@@ -17,7 +23,7 @@ const {
   ShareButton
 } = FBSDK;
 
-var REQUEST_URL = 'http://inspiration-ruigomes.rhcloud.com/quotes'
+var REQUEST_URL = 'https://inspiration-ruigomes.rhcloud.com/quotes'
 
 export default class Inspiration extends Component {
   constructor(props, styles) {
@@ -28,6 +34,7 @@ export default class Inspiration extends Component {
     this.state = {
       quotes: null,
       selectedQuote: 0,
+      showOnboarding: true
     };
   }
 
@@ -50,14 +57,27 @@ export default class Inspiration extends Component {
 
     return {
       contentType: 'link',
-      quote: quote.content,
+      quote: quote.content + " — " + quote.author,
       contentTitle: 'Motivato',
       contentDescription: 'Get your daily fix of motivation - Download the app now!',
       contentUrl: "https://www.motivatoapp.com/",
     }
   }
 
+  completeOnboarding() {
+    this.setState({
+      showOnboarding: false,
+    })
+    store.save('onboarding', {
+      complete: true
+    });
+  }
+
   render() {
+    if(this.state.showOnboarding) {
+      return <Onboarding completeOnboarding={this.completeOnboarding.bind(this)} />;
+    }
+
     if (!this.state.quotes) {
       return this.renderLoadingView();
     }
@@ -87,7 +107,7 @@ export default class Inspiration extends Component {
   renderLoadingView() {
     return (
       <View style={styles.spinnercontainer}>
-        <Spinner size={100} type='Bounce' color='#FFFFFF'/>
+        <Spinner size={100} isVisible={true} type='CircleFlip' color='#FFFFFF'/>
       </View>
     );
   }
@@ -97,6 +117,15 @@ export default class Inspiration extends Component {
   }
 
   fetchData() {
+
+    store.get('onboarding').then(onboarding => {
+      if(onboarding !== null) {
+        this.setState({
+          showOnboarding: !onboarding.complete,
+        });
+      }
+    });
+
     fetch(REQUEST_URL)
       .then((response) => response.json())
       .then((responseData) => {
