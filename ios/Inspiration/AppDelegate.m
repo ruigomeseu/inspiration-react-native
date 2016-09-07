@@ -33,7 +33,10 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
+  [[Fabric sharedSDK] setDebug: YES];
   [Fabric with:@[[Crashlytics class]]];
+  
   return YES;
 }
 

@@ -42,6 +42,9 @@
         <provider android:authorities="com.facebook.app.FacebookContentProvider154879571581551"
             android:name="com.facebook.FacebookContentProvider"
             android:exported="true"/>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="42f2574f06b09b73d42f2dba29aa6824ba5ae931" />
     </application>
 
 

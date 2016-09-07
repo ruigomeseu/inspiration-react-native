@@ -1,6 +1,7 @@
 package me.ruigomes.motivato;
 
 import com.facebook.react.ReactActivity;
+import com.smixx.fabric.FabricPackage;
 
 import android.content.Intent;
 
