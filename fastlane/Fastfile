@@ -16,7 +16,7 @@ platform :ios do
     )
 
     commit_version_bump(
-      message: "Deployed new iOS build #{lane_context[SharedValues::BUILD_NUMBER]}",
+      message: "Deployed new iOS build (##{lane_context[SharedValues::BUILD_NUMBER]})",
       xcodeproj: './ios/Inspiration.xcodeproj'
     )
 
@@ -25,7 +25,7 @@ platform :ios do
       project: "./ios/Inspiration.xcodeproj"
     )
 
-    pilot
+    pilot(skip_submission: true)
   end
 
   after_all do |lane|
