@@ -1,0 +1,9 @@
+#iOS
+app_identifier "me.ruigomes.motivato" # The bundle identifier of your app
+apple_id "hello@ruigomes.me" # Your Apple email address
+
+team_id "P7FCD7ZNJW"  # Developer Portal Team ID
+
+#Android
+json_key_file "./android/app/play-store-api.json" # Path to the json secret file - Follow https://github.com/fastlane/supply#setup to get one
+package_name "me.ruigomes.motivato" # Your Android app package

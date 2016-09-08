@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+      
+      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.001266">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000639">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: sigh" time="13.446887">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: increment_build_number" time="2.147944">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="4: commit_version_bump" time="0.573722">
+        
+          <failure message="/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/actions/actions_helper.rb:33:in `execute_action'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/runner.rb:175:in `block in execute_action'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/runner.rb:174:in `chdir'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/runner.rb:174:in `execute_action'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/runner.rb:100:in `trigger_action_by_name'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/fast_file.rb:140:in `method_missing'&#10;Fastfile:18:in `block (2 levels) in parsing_binding'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/lane.rb:33:in `call'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/runner.rb:49:in `block in execute'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/runner.rb:45:in `chdir'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/runner.rb:45:in `execute'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/lane_manager.rb:46:in `cruise_lane'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/command_line_handler.rb:30:in `handle'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/commands_generator.rb:49:in `block (2 levels) in run'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/commander-4.4.0/lib/commander/command.rb:178:in `call'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/commander-4.4.0/lib/commander/command.rb:153:in `run'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/commander-4.4.0/lib/commander/runner.rb:444:in `run_active_command'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane_core-0.50.3/lib/fastlane_core/ui/fastlane_runner.rb:36:in `run!'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/commander-4.4.0/lib/commander/delegates.rb:15:in `run!'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/commands_generator.rb:246:in `run'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/commands_generator.rb:20:in `start'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/lib/fastlane/cli_tools_distributor.rb:58:in `take_off'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.102.0/bin/fastlane:5:in `&lt;top (required)&gt;'&#10;/usr/local/bin/fastlane:22:in `load'&#10;/usr/local/bin/fastlane:22:in `&lt;main&gt;'&#10;&#10;Found unexpected uncommited changes in the working directory. Expected these files to have &#10;changed: &#10;ios/Inspiration.xcodeproj/project.pbxproj&#10;ios/Inspiration/Info.plist&#10;ios/InspirationTests/Info.plist.&#10;But found these actual changes: &#10;.gitignore&#10;android/app/build.gradle&#10;android/app/src/main/res/values/com_crashlytics_export_strings.xml&#10;inspiration.js&#10;ios/Inspiration.xcodeproj/project.pbxproj&#10;ios/Inspiration.xcodeproj/xcshareddata/xcschemes/Inspiration.xcscheme&#10;ios/Inspiration/Info.plist&#10;ios/InspirationTests/Info.plist&#10;AppStore_me.ruigomes.motivato.mobileprovision&#10;fastlane/Appfile&#10;fastlane/Deliverfile&#10;fastlane/Fastfile&#10;fastlane/README.md&#10;fastlane/metadata/copyright.txt&#10;fastlane/metadata/en-US/description.txt&#10;fastlane/metadata/en-US/keywords.txt&#10;fastlane/metadata/en-US/marketing_url.txt&#10;fastlane/metadata/en-US/name.txt&#10;fastlane/metadata/en-US/privacy_url.txt&#10;fastlane/metadata/en-US/release_notes.txt&#10;fastlane/metadata/en-US/support_url.txt&#10;fastlane/metadata/primary_category.txt&#10;fastlane/metadata/primary_first_sub_category.txt&#10;fastlane/metadata/primary_second_sub_category.txt&#10;fastlane/metadata/secondary_category.txt&#10;fastlane/metadata/secondary_first_sub_category.txt&#10;fastlane/metadata/secondary_second_sub_category.txt&#10;fastlane/report.xml&#10;fastlane/screenshots/README.txt.&#10;Make sure you have cleaned up the build artifacts and &#10;are only left with the changed version files at this stage in your lane, and don't touch the &#10;working directory while your lane is running. You can also use the :force option to bypass this &#10;check, and always commit a version bump regardless of the state of the working directory." />
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>

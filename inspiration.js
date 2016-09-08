@@ -107,7 +107,7 @@ export default class Inspiration extends Component {
   renderLoadingView() {
     return (
       <View style={styles.spinnercontainer}>
-        <Spinner size={100} isVisible={true} type='CircleFlip' color='#FFFFFF'/>
+        <Spinner size={100} isVisible={true} type='Bounce' color='#FFFFFF'/>
       </View>
     );
   }
