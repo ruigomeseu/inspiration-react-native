@@ -22,7 +22,7 @@ platform :ios do
 
     gym(
       scheme: "Inspiration",
-      xcodeproj: "./ios/Inspiration.xcodeproj"
+      project: "./ios/Inspiration.xcodeproj"
     )
 
     pilot
